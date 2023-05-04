@@ -1,0 +1,22 @@
+<p>===================ngFor=============</p>
+<div *ngFor="let item of [1,2,5]">
+<p>Number is :{{item}}</p>
+</div>
+
+<p>===================ngStyle and ngIf=============</p>
+
+<div *ngFor="let p of products">
+<div class="card" style="width:400px">
+<div class="card-body" [ngStyle]="{background:p.available==='Available'? '#E8E2DE' : '#F49F6F'}">
+  <div>{{p.name}}</div>
+  <div>{{p.age}}</div>
+
+  <div [ngStyle]="{color:p.available==='Available'? 'Green' : 'red'}">{{p.available}}</div> 
+
+  <button class="btn btn-primary"  *ngIf="p.available==='Available'; else notify">View</button> 
+  <ng-template #notify>
+  <button class="btn btn-danger">Notify</button>
+  </ng-template>
+   </div>
+   </div>
+</div>
