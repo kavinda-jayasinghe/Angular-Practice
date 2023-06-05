@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
 
+
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './filter/filter.component';
+import { CoursesComponent } from './courses/courses.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, FilterComponent, CoursesComponent],
+  imports: [BrowserModule, AppRoutingModule,FormsModule,
+    ReactiveFormsModule, HttpClientModule
+   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
