@@ -1,5 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +15,14 @@ export class AppComponent implements OnInit {
 
   buildForm() {
     this.registerForm = new FormGroup({
-      name: new FormControl(''),
-      lastName: new FormControl(''),
-      age: new FormControl(''),
+      name: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      age: new FormControl('', Validators.required),
     });
+  }
+
+  onSubmit(){
+console.log(this.registerForm.value);
+
   }
 }

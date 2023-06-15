@@ -73,6 +73,7 @@ export class CoursesComponent implements OnInit {
   getPremiumCourses(){
        return this.courses.filter((courses) => courses.type === 'premium').length;
   }
+  name:string='kavinda jay'
 }
 
 

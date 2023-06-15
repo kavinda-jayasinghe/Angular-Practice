@@ -3,6 +3,19 @@
 [all]="getTotalCourses()"
 [free]="getFreeCourses()"
 [premium]="getPremiumCourses()"
-
+[name]=name
 ></app-filter>
+
+<div class="card-outer">
+<div *ngFor="let course of courses" class="card-inner">
+
+
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">{{course.type}}</h5>
+    <p class="card-text">{{course.name}}</p>
+    </div>
+    </div>
+</div>
+</div>
 

@@ -1,0 +1,15 @@
+{{name}}
+
+<input type="text" [disabled]="isDisable">
+
+<button (click)="onClick()">Click</button>
+
+
+<!-- two way -->
+
+<input type="text" [(ngModel)]="title" placeholder="two way">
+
+{{title}}
+
+
+<!-- input decorator -->

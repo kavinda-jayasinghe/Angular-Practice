@@ -1,0 +1,89 @@
+// -------------------------------------one way data binding-------------------------------------
+
+*--property binding (model to view)
+
+-when we pass the bool value to html file,bool val goes to string,there for we use [] in the disable..then we can bind data as bool
+
+//ts 
+isDisable: boolean = false;
+
+//html
+<input type="text" [disabled]="isDisable">
+
+
+*--event binding (view to model-btn click etc)
+
+//html
+<button (click)="onClick()">Click</button>
+
+//ts
+  onClick(){
+    console.log("btn clicked");  
+  }
+
+
+// -------------------------------------two way data binding-------------------------------------
+//html
+<input type="text" [(ngModel)]="title" placeholder="two way">
+
+{{title}}
+
+//ts
+
+  title:string='';
+
+//app.module.ts
+
+import FormsModule to the module.ts file
+
+
+// -------------------------------------@ input (pass data  parent to child )-------------------------------------
+ex-1
+//child html and ts 
+
+
+
+
+ex-2
+//child html and ts 
+<input type="radio" name="filter"  value="all" [(ngModel)]="selctedRadioBtn">
+
+@Input()all: number = '';
+
+//parent html and ts
+
+getFreeCourses(){
+    return this.courses.filter((courses) => courses.type === 'free').length;
+}
+
+
+  <app-filter [all]="getTotalCourses()"> </app-filter>
+
+
+// -----------------------------------------Reactive forms------------------------------------------------------
+
+1-import ReactiveFormsModule to the app module.ts
+2-inside ts 
+
+  
+  registerForm: FormGroup;
+  ngOnInit() {
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.registerForm = new FormGroup({
+      name: new FormControl('kavinda'),
+      lastName: new FormControl(''),
+      age: new FormControl(''),
+    });
+  }
+
+3-inside html
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name">
+</form>
+
+// -----------------------------------------Reactive forms validate------------------------------------------------------

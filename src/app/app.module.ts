@@ -10,8 +10,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FilterComponent } from './filter/filter.component';
 import { CoursesComponent } from './courses/courses.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
-  declarations: [AppComponent, FilterComponent, CoursesComponent],
+  declarations: [AppComponent, FilterComponent, CoursesComponent, HomeComponent, AboutComponent],
   imports: [BrowserModule, AppRoutingModule,FormsModule,
     ReactiveFormsModule, HttpClientModule
    ],
